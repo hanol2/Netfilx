@@ -37,8 +37,8 @@ const MovieDetail = () => {
     // 내가 선택한 영화에 대한 리뷰를 가져오는 함수
     const getReviewData = () => {
         axios
-             .get(`/${id}/reviews`)
-             .then(res => setReview(res.data.results))
+            .get(`/${id}/reviews`)
+            .then(res => setReview(res.data.results))
     }
 
 
@@ -111,16 +111,16 @@ const MovieDetail = () => {
                         <h2>Review</h2>
 
                         {review.length === 0
-                        ? <div>등록된 리뷰가 없습니다</div>
-                        : (review.map(item =>
-                            <div key={item.id}>
-                                <hr />
-                                <p>{item.content}</p>
-                                <p>
-                                    작성자 :{item.author} |
-                                    작성일 : {item.created_at}
-                                </p>
-                            </div>
+                            ? <div>등록된 리뷰가 없습니다</div>
+                            : (review.map(item =>
+                                <div key={item.id}>
+                                    <hr />
+                                    <p>{item.content}</p>
+                                    <p>
+                                        작성자 :{item.author} |
+                                        작성일 : {item.created_at}
+                                    </p>
+                                </div>
                             ))
                         }
                     </div>
